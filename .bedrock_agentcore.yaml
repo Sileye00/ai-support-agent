@@ -1,0 +1,62 @@
+default_agent: CustomerSupportAgent
+agents:
+  CustomerSupportAgent:
+    name: CustomerSupportAgent
+    language: python
+    node_version: '20'
+    entrypoint: /voc/work/Project_starter/main.py
+    deployment_type: direct_code_deploy
+    runtime_type: PYTHON_3_13
+    platform: linux/arm64
+    container_runtime: null
+    source_path: /voc/work/Project_starter
+    aws:
+      execution_role: arn:aws:iam::006302662356:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-1687b1c02b
+      execution_role_auto_create: false
+      account: '006302662356'
+      region: us-east-1
+      ecr_repository: null
+      ecr_auto_create: false
+      s3_path: s3://bedrock-agentcore-codebuild-sources-006302662356-us-east-1
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: CustomerSupportAgent-RxLpdp2kbx
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:006302662356:runtime/CustomerSupportAgent-RxLpdp2kbx
+      agent_session_id: 82bfddd2-846f-4ab1-a8dd-2e4d351f35f4
+    codebuild:
+      project_name: null
+      execution_role: null
+      source_bucket: null
+    memory:
+      mode: STM_AND_LTM
+      memory_id: CustomerSupportMemory-PBhw6zEV5N
+      memory_arn: null
+      memory_name: CustomerSupportAgent_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
